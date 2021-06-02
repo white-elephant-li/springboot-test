@@ -1,0 +1,17 @@
+server:
+  port: 8090
+  servlet:
+    context-path: /
+spring:
+  devtools:
+    restart:
+      # 设置热部署生效
+      enabled: true
+      # 设置重启的目录
+      additional-paths: src/main/java
+  profiles:
+    active: jdbc
+#  resources:
+#    static-locations:
+#      - classpath:resources
+#      - classpath:static

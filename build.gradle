@@ -1,0 +1,45 @@
+plugins {
+    id 'org.springframework.boot' version '2.2.12.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+    id 'java'
+}
+
+group = 'com.ligang'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'}
+    mavenCentral()
+}
+
+dependencies {
+    //热启动
+    implementation 'org.springframework.boot:spring-boot-devtools'
+    compile 'org.springframework.boot:spring-boot-devtools'
+    runtimeOnly 'org.springframework.boot:spring-boot-devtools'
+
+    //数据库相关
+    implementation 'com.alibaba:druid-spring-boot-starter:1.1.10'  //导入数据库连接池druid
+    //导入spring jpa支持
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    //mysql
+    runtimeOnly 'mysql:mysql-connector-java'
+
+    //spring
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    implementation 'org.apache.commons:commons-lang3:3.5'
+    implementation 'com.atlassian.commonmark:commonmark:0.11.0'
+    implementation 'com.atlassian.commonmark:commonmark-ext-gfm-tables:0.11.0'
+    implementation 'com.vdurmont:emoji-java:4.0.0'
+    
+    implementation "commons-io:commons-io:2.6"
+    implementation "io.springfox:springfox-boot-starter:3.0.0"
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
