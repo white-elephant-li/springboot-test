@@ -4,6 +4,8 @@ import com.ligang.whiteelephant.dao.ActivityRepository;
 import com.ligang.whiteelephant.dao.GoodsRepository;
 import com.ligang.whiteelephant.dao.SecondsRepository;
 import com.ligang.whiteelephant.dao.SwiperRepository;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -12,6 +14,8 @@ import java.util.Map;
 @RestController
 @RequestMapping("/home")
 @CrossOrigin
+
+@Api(tags = "app主页")
 public class HomeController {
 
     private  SwiperRepository swiperRepository;
@@ -31,6 +35,7 @@ public class HomeController {
 
     @GetMapping(value = "/swiper")
     @ResponseBody
+    @ApiOperation(value = "获取swiper的图像地址")
     public Map<String,Object> icon_swiper(){
         Map<String,Object> icon = new HashMap<>();
         Map<String,Object> result = new HashMap<>();
