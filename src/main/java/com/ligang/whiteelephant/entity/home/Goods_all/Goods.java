@@ -1,17 +1,23 @@
 package com.ligang.whiteelephant.entity.home.Goods_all;
 
+import io.swagger.annotations.ApiModel;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name = "t_goods")
+@ApiModel(value="商品类",description="获取商品详情" )
 public class Goods {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String img;
     private boolean isDirect;
+
+
+
     private boolean isHave;
     private String name;
     private double price;
@@ -59,18 +65,29 @@ public class Goods {
     public void setImg(String img) {
         this.img = img;
     }
+    public void setisDirect(Boolean isDirect) {
+        this. isDirect =isDirect;
+    }
 
-    public boolean isDirect() {
+    public void setisHave(Boolean isHave) {
+        this.isHave = isHave;
+    }
+
+    public Boolean getisDirect(){
         return isDirect;
     }
+
+    public Boolean getisHave(){
+        return isHave;
+    }
+
+
 
     public void setDirect(boolean direct) {
         isDirect = direct;
     }
 
-    public boolean isHave() {
-        return isHave;
-    }
+
 
     public void setHave(boolean have) {
         isHave = have;

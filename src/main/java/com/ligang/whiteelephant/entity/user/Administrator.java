@@ -1,22 +1,23 @@
 package com.ligang.whiteelephant.entity.user;
 
+import io.swagger.annotations.ApiModel;
 import org.hibernate.validator.constraints.UniqueElements;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "t_administrator")
+@ApiModel(value="管理员类",description="获取管理员对象" )
 public class Administrator {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @UniqueElements
-    @NotNull
+    @NotEmpty
     private String username;
 
-    @NotNull
+    @NotEmpty
     private String password;
     private String sessionId;
     private String loginTime;

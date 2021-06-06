@@ -11,7 +11,14 @@ spring:
       additional-paths: src/main/java
   profiles:
     active: jdbc
+  servlet:
+    multipart:
+      #单个数据的大小
+      max-file-size: 100MB
+      #总数据的大小
+      max-request-size: 100MB
 #  resources:
 #    static-locations:
 #      - classpath:resources
 #      - classpath:static
+#      - classpath

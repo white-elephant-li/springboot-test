@@ -1,9 +1,12 @@
 package com.ligang.whiteelephant.entity.home.Goods_all;
 
+import io.swagger.annotations.ApiModel;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "t_swiper_img")
+@ApiModel(value="商品轮播图类",description="请求图片url" )
 public class SwiperImg {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)

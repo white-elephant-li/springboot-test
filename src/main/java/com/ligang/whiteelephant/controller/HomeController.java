@@ -14,7 +14,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/home")
 @CrossOrigin
-
+@ResponseBody
 @Api(tags = "app主页")
 public class HomeController {
 
@@ -47,6 +47,7 @@ public class HomeController {
         return result;
     }
 
+    @ApiOperation(value = "获取活动图地址")
     @GetMapping(value = "/activity")
     @ResponseBody
     public Map<String,Object> icon_activity(){
@@ -60,6 +61,7 @@ public class HomeController {
         return result;
     }
 
+    @ApiOperation(value = "获取秒杀对象")
     @GetMapping(value = "/seconds")
     @ResponseBody
     public Map<String,Object> icon_seconds(){
@@ -73,12 +75,12 @@ public class HomeController {
         return result;
     }
 
+    @ApiOperation(value = "获取商品对象")
     @GetMapping(value = "/goods")
     @ResponseBody
     public Map<String,Object> get_all_goods(){
         Map<String,Object> icon = new HashMap<>();
         Map<String,Object> result = new HashMap<>();
-//        System.out.println(goodsRepository.selectGoods());
 
         icon.put("list",goodsRepository.selectGoods());
         result.put("state",0);
@@ -86,6 +88,8 @@ public class HomeController {
 
         return result;
     }
+
+
 
 
 

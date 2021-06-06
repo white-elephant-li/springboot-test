@@ -1,9 +1,12 @@
 package com.ligang.whiteelephant.entity.home;
 
+import io.swagger.annotations.ApiModel;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "t_seconds")
+@ApiModel(value="秒杀类",description="获取秒杀详情" )
 public class Seconds {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
